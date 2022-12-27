@@ -1,6 +1,6 @@
 package com.example.authapp.di
 
-import com.example.authapp.data.remote.TodoApi
+import com.example.authapp.data.remote.Api.TodoApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RetrofitModule {
+object RetrofitModule {
 
     @Singleton
     @Provides

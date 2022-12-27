@@ -1,4 +1,4 @@
-package com.example.authapp.domain.Entity
+package com.example.authapp.domain.entity
 
 data class Todo(
     val completed: Boolean,

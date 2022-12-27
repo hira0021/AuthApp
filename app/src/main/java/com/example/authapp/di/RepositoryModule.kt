@@ -1,6 +1,9 @@
 package com.example.authapp.di
 
-import com.example.authapp.data.remote.TodoApi
+import com.example.authapp.data.local.dao.TodoDao
+import com.example.authapp.data.local.entity.TodoChaceMapper
+import com.example.authapp.data.remote.Api.TodoApi
+import com.example.authapp.data.remote.entity.TodoNetworkMapper
 import com.example.authapp.data.repository.TodoRepository
 import com.example.authapp.domain.repository.ITodoRepository
 import dagger.Module
@@ -11,14 +14,17 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RepositoryModule {
+object RepositoryModule {
 
     @Singleton
     @Provides
     fun provideTodoRepository(
-        retrofit: TodoApi
+        todoDao: TodoDao,
+        retrofit: TodoApi,
+        todoChaceMapper: TodoChaceMapper,
+        todoNetworkMapper: TodoNetworkMapper
     ): ITodoRepository{
-        return TodoRepository(retrofit)
+        return TodoRepository(todoDao, retrofit, todoChaceMapper, todoNetworkMapper)
     }
 
 }

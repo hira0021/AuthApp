@@ -7,7 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.authapp.databinding.ActivityMainBinding
-import com.example.authapp.domain.Entity.Todo
+import com.example.authapp.domain.entity.Todo
 import com.example.authapp.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import java.lang.Exception

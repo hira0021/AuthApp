@@ -1,11 +1,11 @@
 package com.example.authapp.domain.usecase
 
-import com.example.authapp.data.repository.TodoRepository
-import com.example.authapp.domain.Entity.Todo
-import com.example.authapp.util.DataState
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import com.example.authapp.data.local.TodoDatabase
+import com.example.authapp.domain.repository.ITodoRepository
+import javax.inject.Inject
 
-class TodoInteractor(private val todoRepository: TodoRepository): TodoUseCase {
+class TodoInteractor @Inject constructor(
+    private val todoRepository: ITodoRepository
+): TodoUseCase {
     override suspend fun getTodos() = todoRepository.getAllTodo()
 }

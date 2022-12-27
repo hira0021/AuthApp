@@ -1,14 +1,12 @@
 package com.example.authapp.presentation
 
 import androidx.lifecycle.*
-import com.example.authapp.data.repository.TodoRepository
-import com.example.authapp.domain.Entity.Todo
+import com.example.authapp.domain.entity.Todo
 import com.example.authapp.domain.usecase.TodoUseCase
 import com.example.authapp.util.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
